@@ -30,7 +30,7 @@ client.on('qr', (qr) => {
 });
 
 client.on('authenticated', () => {
-    console.log('AUTHENTICATED');
+    console.log('AUTENTICADO');
 });
 
 client.on('auth_failure', msg => {
