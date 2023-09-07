@@ -1,6 +1,6 @@
 // CONECTA A SHEETDB
 const sheetdb = require("sheetdb-node");
-const clientSheet = sheetdb({ address: '00l17v2767072' });
+const clientSheet = sheetdb({ address: 'j28i58cf81fky' });
 
 const fs = require('fs');
 const { Client, Location, List, Buttons, LocalAuth } = require('./index');
@@ -17,7 +17,7 @@ const client = new Client({
 client.initialize();
 
 console.log('==================================')
-console.log('DISPARADOR PARA NÚMEROS DA PLANILHA DB 1')
+console.log('DISPARADOR PARA NÚMEROS DA PLANILHA DB 3')
 console.log('===================================')
 console.log('')
 client.on('loading_screen', (percent, message) => {
@@ -57,7 +57,8 @@ client.on('message', async msg =>
     // se (a mensagem começar com "!sheet")
     if (msg.body.startsWith('!sheet ')) 
     {
-            msg.reply('Disparando...');
+        msg.reply('Disparando...');
+
         // cria variavel para dizer qual é a mensagem (pula os 7 caracteres do início)
         const mensagem = msg.body.slice(7);
         // le a planilha do sheetsdb depois nao sei oq significa esse .then(function(data)
@@ -75,8 +76,6 @@ client.on('message', async msg =>
                     }
                     //espera um tempo aleatório
                     ,1000 + Math.floor(Math.random() * 8000) * (1+i) )
-
-                    
                 });
 
         }
@@ -84,9 +83,7 @@ client.on('message', async msg =>
         {
             console.log(error);
         });
-        
     }
-    
 
 
     if (msg.body === '!ping reply') 
